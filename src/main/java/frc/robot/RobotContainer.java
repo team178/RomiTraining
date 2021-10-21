@@ -20,6 +20,9 @@ import frc.robot.Constants.DriveConstants;
 import frc.robot.commands.ArcadeDrive;
 import frc.robot.commands.AutonomousDistance;
 import frc.robot.commands.AutonomousTime;
+import frc.robot.commands.TrainingPIDAuto;
+import frc.robot.commands.TrainingPIDFoward;
+import frc.robot.commands.TrainingPIDTurn;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.OnBoardIO;
 import frc.robot.subsystems.OnBoardIO.ChannelMode;
@@ -150,10 +153,14 @@ public class RobotContainer {
         .whenInactive(new PrintCommand("Button A Released"));
 
     // Setup SmartDashboard options
-    m_chooser.setDefaultOption("Ramsete Trajectory", generateRamseteCommand());
-    m_chooser.addOption("Auto Routine Distance", new AutonomousDistance(m_drivetrain));
-    m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
-    
+    //m_chooser.setDefaultOption("Ramsete Trajectory", generateRamseteCommand());
+    //m_chooser.addOption("Auto Routine Distance", new AutonomousDistance(m_drivetrain));
+    //m_chooser.addOption("Auto Routine Time", new AutonomousTime(m_drivetrain));
+    m_chooser.setDefaultOption("Training PIDTurn", new TrainingPIDTurn(m_drivetrain, 90, 3));
+    m_chooser.addOption("Training PIDFoward", new TrainingPIDFoward(m_drivetrain, 90, 3));
+    m_chooser.addOption("Training PIDFoward", new TrainingPIDFoward(m_drivetrain, 0.4318, 0.0005));
+    m_chooser.addOption("Training PIDAuto", new TrainingPIDAuto(m_drivetrain));
+
     SmartDashboard.putData(m_chooser);
   }
 
