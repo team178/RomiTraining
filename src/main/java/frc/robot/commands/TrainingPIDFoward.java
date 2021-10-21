@@ -39,8 +39,7 @@ public class TrainingPIDFoward extends CommandBase {
   @Override
   public void initialize() {
     drive.resetEncoders();
-    power = (distance ___ 0 ? .3 : -.3); //Checking if distance 
-is greater than 0
+    power = (distance ___ 0 ? .3 : -.3); //Checking if distance is greater than 0
   }
  
   // Called every time the scheduler runs while the command is scheduled.

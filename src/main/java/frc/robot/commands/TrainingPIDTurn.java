@@ -59,7 +59,7 @@ public class TrainingPIDTurn extends CommandBase {
  
   @Override
   public boolean isFinished() {
-    return Math.abs(error) ___ tolerance; // Checking if the robot’s error is greater less than the tolerance, basically if the Romi has reached its target angle
+    return Math.abs(error) ___ tolerance; // Checking if the robot’s error is less than or equal to the tolerance, basically if the Romi has reached its target angle
   }
 }
  
