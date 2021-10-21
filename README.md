@@ -1,11 +1,16 @@
-# WPILib Romi Example Projects
-This repo provides a list of additional WPILib Romi example projects beyond those supplied directly in WPILib. For more information on the core WPILib examples, plese see [WPILib Programming the Romi](https://docs.wpilib.org/en/latest/docs/romi-robot/programming-romi.html). The examples projects in this repo showcase ways to use various off-the-shelf sensors and actuators in conjunction with the base WPILib Romi kit. You can simply clone this repository, open these projects in VS Code, and build.
+# Romi Trajectory Follower
 
-## List of Example Projects
+## Description
+This example showcases how to use the WPILib `RamseteCommand` to make your Romi follow a predefined trajectory. These trajectories can be hand crafted, or generated using a tool like PathWeaver.
 
-### WPILib Features
-1. [Robot Characterization with frc-characterization](romi-characterization/)
-2. [Trajectory Follower](romi-trajectory-ramsete/)
+Note that all the constants used here assume that characterization has been done using meters as units. Additionally, all coordinates/distances are specified in meters.
 
-### COTS Mechanisms
-1. [Simple Robot Arm](simpleArm/)
+## Additional Hardware Required
+None
+
+## Additional Configuration Required
+- Ensure that the gyro has been [calibrated using the web UI](https://docs.wpilib.org/en/stable/docs/romi-robot/web-ui.html#imu-calibration)
+- For best results, you should [run a characterization on your Romi](../romi-characterization) since there might be slight variations between Romis (due to assembly, mechanical difference, etc)
+
+## Additional Code Setup
+The trajectory can be modified by editing the `generateRamseteCommand` method in `RobotContainer.java`
